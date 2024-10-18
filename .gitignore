@@ -1,2 +1,4 @@
 node_modules
-src/database/customer-order
+src/database/customer-order/*
+src/database/delivered-order/*
+src/database/rekap-order/*

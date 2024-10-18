@@ -3,7 +3,26 @@
 
 ###
 # Order
-POST {{ baseURL }}/order/1
+POST {{ baseURL }}/api/order/1
+Content-Type: application/json
+
+{
+  "address": "Test Address",
+  "payment_type": "Transfer",
+  "items": [
+    {
+        "id_product": 1,
+        "name": "Lorem Ipsum",
+        "price": 5000,
+        "qty": 1
+    }    
+  ]
+}
+
+
+###
+# Order
+POST {{ baseURL }}/api/order/2
 Content-Type: application/json
 
 {
