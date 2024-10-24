@@ -29,6 +29,10 @@ export const createOrder = async (
     `${orderNumber}.json`
   );
 
+  const countTotal = items.reduce((acc: number, item: any) => {
+    return acc + item.price * item.qty;
+  }, 0);
+
   try {
     await saveOrderWithRetry(filePath, {
       no_order: orderNumber,
@@ -38,7 +42,7 @@ export const createOrder = async (
       address: address,
       payment_type: payment_type,
       items: items,
-      total: 10000,
+      total: countTotal,
       status: "Order Diterima",
     });
 
